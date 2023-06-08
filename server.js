@@ -1,4 +1,6 @@
 const {Client} =  require('pg')
+const express = require('express')
+const app = express()
 const client = new Client({
     user: "postgres",
     password:"admin",
@@ -7,9 +9,18 @@ const client = new Client({
     database: "todo"
 })
 
+app.get("/todos", async (req, res) => {
+    const rows = await readTodos();
+    res.setHeader("content-type", "application/json")
+    res.send(JSON.stringify(rows))
+})
+
+app.listen(8000, ()=> console.log("web server is listening"))
+
 start()
 async function start() {
     await connect();
+    /*
     const todos = await readTodos();
     console.log(todos)
 
@@ -18,6 +29,7 @@ async function start() {
 
     const successDelete = await deleteTodo(1)
     console.log(`Deleting was ${successDelete}`)
+    */
 }
 
 async function connect() {
