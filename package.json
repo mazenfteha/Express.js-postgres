@@ -1,0 +1,24 @@
+{
+  "name": "express.js-postgres",
+  "version": "1.0.0",
+  "description": "Building a Web API with Express and PostgreSQL to Consume from Browser",
+  "main": "index.js",
+  "scripts": {
+    "start": "server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mazenfteha/Express.js-postgres.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mazenfteha/Express.js-postgres/issues"
+  },
+  "homepage": "https://github.com/mazenfteha/Express.js-postgres#readme",
+  "dependencies": {
+    "pg": "^8.11.0"
+  }
+}
